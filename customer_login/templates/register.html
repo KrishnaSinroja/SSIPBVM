@@ -1,0 +1,58 @@
+{% extends 'basic.html' %}
+{% block title%} Login {% endblock %}
+{% block body %}
+
+
+<div class="container my-3">
+    <h3>Register your Account here </h3>
+<br>
+    <p style="color:red">All Fields are Required*</p>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+      <label for="name">Username:</label>
+    <input type="text" name="name" size="15" class="form-control"  required id="name" aria-describedby="name">
+  </div>
+    <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailhelp">
+    <small id="emailHelp" class="form-text text-muted">we will not share with anyone else!</small>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" required name="password" id="password" aria-describedby="emailhelp">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+
+      <div class="form-group">
+    <label for="password">Confirm Password:</label>
+    <input type="password" class="form-control" name="repassword" id="password" aria-describedby="emailhelp">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+
+      <div class="form-group">
+    <label for="password">Gender:</label>
+    <input type="radio" name="gender" value="female"/>Female
+            <input type="radio" name="gender" value="male"/>Male
+  </div>
+
+
+      <div class="form-group">
+    <label for="contactno">Contact no:</label>
+    <input type="tel" class="form-control" name="contact" id="contact" aria-describedby="emailhelp">
+    <small id="emailHelp" class="form-text text-muted">we will not share with anyone else!</small>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+    <a href={% url 'login'%} class="btn btn-primary" role="button">Already Have an Account?</a>
+</form>
+</div>
+
+{% endblock %}
+
+
+
